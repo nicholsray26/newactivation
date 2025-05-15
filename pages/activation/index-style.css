@@ -1,0 +1,167 @@
+/* Base Reset */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: 'Oxygen', sans-serif;
+  background: linear-gradient(to right, #f6f7fb, #e9edf3);
+  color: #111;
+}
+
+/* Container Layout */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1250px;
+  min-height: 500px;
+  margin: 60px auto;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Left Column */
+.left {
+  padding: 20px 40px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+  position: relative;
+}
+
+/* Right Column */
+.right {
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.right img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+/* Form Styles */
+.form-content {
+  margin-top: 0;
+}
+
+.form-content h1 {
+  font-size: 2.4em;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.form-content input[type="text"] {
+  width: 70%;
+  padding: 16px;
+  font-size: 1em;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+  margin-bottom: 20px;
+}
+
+.form-content .btn {
+  background-color: #000;
+  color: #fff;
+  padding: 14px 28px;
+  font-size: 1.4em;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.form-content .btn:hover {
+  background-color: #222;
+}
+
+/* Device Image Strip */
+.device-strip {
+  position: absolute;
+  bottom: 10px;
+  left: 40px;
+  width: calc(100% - 80px);
+  display: flex;
+  justify-content: center;
+}
+
+.device-strip img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Steps Section */
+.steps-grid {
+  max-width: 1300px;
+  margin: 50px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 40px 60px;
+  text-align: center;
+}
+
+.step-box {
+  font-size: 1.2em;
+}
+
+.step-box h2 {
+  font-size: 2em;
+  margin: 0 0 10px;
+}
+
+.step-box p {
+  font-size: 1em;
+  color: #555;
+  font-weight: 600;
+}
+
+/* Hide content on mobile/tablet */
+.desktop-content {
+  display: block;
+}
+
+.mobile-message {
+  display: none;
+}
+
+/* Mobile and Tablet Styles */
+@media (max-width: 900px) {
+  html, body {
+    overflow: hidden;
+    height: 100vh;
+  }
+
+  .desktop-content {
+    display: none !important;
+  }
+
+  .mobile-message {
+    display: flex !important;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.4em;
+    color: #333;
+    font-family: 'Oxygen', sans-serif;
+  }
+}

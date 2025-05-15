@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>TV Code Activation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Base Reset */
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Oxygen', sans-serif;
+      background: linear-gradient(to right, #f6f7fb, #e9edf3);
+      color: #111;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Container */
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 1250px;
+      min-height: 500px;
+      margin: 60px auto;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Left Panel */
+    .left {
+      padding: 20px 40px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      text-align: left;
+      position: relative;
+    }
+
+    /* Right Panel */
+    .right {
+      padding: 60px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .right img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      object-fit: contain;
+      margin: 0 auto;
+    }
+
+    /* Form Content */
+    .form-content {
+      margin-top: 0;
+    }
+
+    .form-content h1 {
+      font-size: 2.4em;
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 30px;
+    }
+
+    .form-content input[type="text"] {
+      width: 70%;
+      padding: 16px;
+      font-size: 1em;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      outline: none;
+      margin-bottom: 20px;
+    }
+
+    .form-content .btn {
+      background-color: #000;
+      color: #fff;
+      padding: 14px 28px;
+      font-size: 1.4em;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .form-content .btn:hover {
+      background-color: #222;
+    }
+
+    /* Device Strip */
+    .device-strip {
+      position: absolute;
+      bottom: 10px;
+      left: 40px;
+      width: calc(100% - 80px);
+      display: flex;
+      justify-content: center;
+    }
+
+    .device-strip img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Steps Grid */
+    .steps-grid {
+      max-width: 1300px;
+      margin: 50px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 40px 60px;
+      text-align: center;
+    }
+
+    .step-box {
+      font-size: 1.2em;
+    }
+
+    .step-box h2 {
+      font-size: 2em;
+      margin: 0 0 10px;
+    }
+
+    .step-box p {
+      font-size: 1em;
+      color: #555;
+      font-weight: 600;
+    }
+
+    /* Tablet Styles */
+    @media (max-width: 900px) {
+      html, body {
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      .container {
+        grid-template-columns: 1fr;
+        height: 100vh;
+      }
+
+      .left, .right {
+        padding: 30px 20px;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+      }
+
+      .form-content input[type="text"] {
+        width: 90%;
+      }
+
+      .steps-grid {
+        display: none;
+      }
+
+      .device-strip {
+        position: static;
+        margin-top: 20px;
+      }
+    }
+
+    /* Mobile Styles */
+    @media (max-width: 500px) {
+      html, body {
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      .form-content h1 {
+        font-size: 1.6em;
+      }
+
+      .form-content input[type="text"] {
+        width: 100%;
+      }
+
+      .form-content .btn {
+        width: 100%;
+      }
+    }
+    /* Default: show page content, hide maintenance message */
+.main-content {
+  display: block;
+}
+.maintenance-message {
+  display: none;
+}
+
+/* For mobile and tablets (up to 1024px) */
+@media screen and (max-width: 1024px) {
+  .main-content {
+    display: none !important;
+  }
+  .maintenance-message {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background-color: #f8f8f8;
+    color: #333
+  </style>
+</head>
+<body>
+
+  <!-- Main page content -->
+<div class="main-content">
+  <div class="container">
+    <div class="left">
+      <div class="form-content">
+        <h1>Please Enter The Code Displayed On Your TV Screen</h1>
+        <input type="text" placeholder="Enter Your Code">
+        <button class="btn" 
+        style="font-weight: bold; font-size: 1.5em; background-color: #5C2D91; color: white;" 
+        onclick="window.location.href='success.html'">
+  Activate Now
+</button>
+      </div>
+      <div class="device-strip">
+        <img src="devices.png" alt="Supported Devices">
+      </div>
+    </div>
+    <div class="right">
+      <img src="activate-tv.png" alt="TV Image">
+    </div>
+  </div>
+  <div class="steps-grid">
+    <div class="step-box">
+      <h2>Step 1:</h2>
+      <p>Open And Launch The App</p>
+    </div>
+    <div class="step-box">
+      <h2>Step 2:</h2>
+      <p>Enter The Code & Register Device</p>
+    </div>
+    <div class="step-box">
+      <h2>Step 3:</h2>
+      <p>Code Will Appear On Left</p>
+    </div>
+    <div class="step-box">
+      <h2>Step 4:</h2>
+      <p>Enjoy Streaming</p>
+    </div>
+  </div>
+</div>
+
+<!-- Maintenance message for mobile/tablet -->
+<div class="maintenance-message">
+  <h2>We are in the process of building a better mobile and tablet experience</h2>
+  <p>The site is maintenance on mobile and tablet view.</p>
+</div>
+</body>
+</html>
